@@ -1,0 +1,459 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+header {
+    background-color: #000000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #ff8c42;
+}
+header input[type="text"] {
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    width: 300px;
+}
+header button {
+    background-color: #ff8c42;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+  }
+  .card {
+    background-color: #1a1a1a; /* Dark card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  .card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ff8c42; /* Orange heading */
+  }
+  .form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #ff8c42; /* Orange border on focus */
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background-color: #1a1a1a;
+    padding: 0 5px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    color: #ccc;
+  }
+  
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 12px;
+    color: #ff8c42; /* Orange label when focused or filled */
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-password:hover {
+    color: #ff8c42; /* Orange on hover */
+  }
+header button:hover {
+    background-color: #e67e22;
+}
+.btn-primary {
+    background-color: #ff8c42; /* Orange button */
+    color: #000;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #e67e22; /* Darker orange on hover */
+  }
+  
+  /* Social Login Buttons */
+  .social-login {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .btn-google, .btn-facebook {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-google {
+    background-color: #db4437; /* Google red */
+    color: white;
+  }
+  
+  .btn-facebook {
+    background-color: #1877f2; /* Facebook blue */
+    color: white;
+  }
+  
+  .btn-google:hover, .btn-facebook:hover {
+    opacity: 0.9;
+  }
+  
+  /* Links */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-center a {
+    color: #ff8c42; /* Orange link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .text-center a:hover {
+    color: #e67e22; /* Darker orange on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .card {
+      padding: 1.5rem;
+    }
+  }
+  
+#video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: flex-start;
+}
+.video-thumbnail {
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+.video-thumbnail:hover {
+    transform: scale(1.05);
+}
+.video-thumbnail video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px 8px 0 0;
+}
+.video-thumbnail h2,
+.video-thumbnail h3 {
+    font-size: 16px;
+    margin: 10px;
+    padding: 0 10px;
+    color: #fff; /* Change font color to white */
+    text-align: left;
+    text-decoration: none;
+}
+#content-wrapper {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+#video-content {
+    flex: 3;
+}
+#main-video {
+    width: 100%;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#title-section {
+    margin-top: 15px;
+}
+#video-title {
+    font-size: 24px;
+    margin: 0;
+    padding: 0 10px;
+    color: #fff; /* Change font color to white */
+    text-decoration: none;
+}
+#video-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ccc;
+    padding: 0 10px;
+}
+#tags-section {
+    margin-top: 10px;
+    padding: 0 10px;
+}
+#tags-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+#like-dislike-buttons {
+    margin-top: 10px;
+    padding: 0 10px;
+}
+#like-button, #dislike-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#like-button:hover, #dislike-button:hover {
+    background-color: #444;
+}
+#playback-speed {
+    margin-top: 10px;
+    padding: 0 10px;
+}
+#playback-speed-selector {
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+#comments-section {
+    margin-top: 20px;
+    padding: 0 10px;
+}
+#comment-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    margin-bottom: 10px;
+}
+#comment-form button {
+    background-color: #ff8c42;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#comment-form button:hover {
+    background-color: #e67e22;
+}
+#comments-list {
+    margin-top: 10px;
+}
+.comment {
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.comment p {
+    margin: 0;
+    font-size: 14px;
+}
+.comment small {
+    color: #888;
+}
+#related-videos {
+    flex: 1;
+    min-width: 300px;
+}
+#related-videos h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+.related-video {
+    margin-bottom: 20px;
+}
+.related-video video {
+    width: 100%;
+    border-radius: 8px;
+    background-color: #000;
+}
+.related-video h3 {
+    font-size: 16px;
+    margin: 10px 0 0;
+    padding: 0 10px;
+    color: #fff; /* Change font color to white */
+    text-decoration: none;
+}
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+@media (max-width: 1200px) {
+    .video-thumbnail {
+        flex: 1 1 calc(33.33% - 20px);
+        max-width: calc(33.33% - 20px);
+    }
+}
+@media (max-width: 768px) {
+    .video-thumbnail {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+    #content-wrapper {
+        flex-direction: column;
+    }
+    #related-videos {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .video-thumbnail {
+        flex: 1 1 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+    }
+}
+#video-title {
+    color: white;
+}
+/* Logo Styles */
+.header-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .header-logo .meme {
+    color: white; /* "EgyptianMeme" in white */
+  }
+  
+  .header-logo .hub {
+    color: black; /* "Hub" in black */
+    background-color: orange; /* Orange background for "Hub" */
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+  /* Thumbnail Video Styles */
+.video-thumbnail video {
+    pointer-events: none; /* Disable interactions like clicking or hovering */
+  }
+  /* Related Video Styles */
+.related-video video {
+    pointer-events: none; /* Disable interactions like clicking or hovering */
+  }
+  /* Social Login Buttons */
+.social-login {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .btn-google, .btn-facebook {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 0.5rem 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+  }
+  
+  .btn-google {
+    background-color: #db4437; /* Google red */
+    color: white;
+  }
+  
+  .btn-facebook {
+    background-color: #1877f2; /* Facebook blue */
+    color: white;
+  }
+  
+  .btn-google:hover, .btn-facebook:hover {
+    opacity: 0.9;
+  }
