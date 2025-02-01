@@ -5,6 +5,7 @@ async function fetchVideos(query = '') {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
+      const backendUrl = 'https://egyptianmemehub-backend.vercel.app/';
       const videos = await response.json();
       displayVideos(videos);
     } catch (error) {
@@ -49,7 +50,7 @@ async function fetchVideos(query = '') {
             ],
           },
         });
-      
+        const backendUrl = 'https://egyptianmemehub-backend.onrender.com';
         const urlParams = new URLSearchParams(window.location.search);
         const filename = urlParams.get('filename');
       
